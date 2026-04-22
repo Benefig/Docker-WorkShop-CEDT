@@ -135,7 +135,7 @@ Use these commands to pull a classmate's published image from Docker Hub and ver
 
 ```bash
 # 1. Pull your classmate's image from Docker Hub
-docker pull <their-dockerhub-username>/workshop-app:latest
+docker pull namo89/workshop-app:latest
 
 # 2. Create an isolated network and start a temporary Postgres container
 docker network create peer-test
@@ -154,7 +154,7 @@ docker run -d \
   --network peer-test \
   -p 3000:3000 \
   -e DATABASE_URL=postgres://postgres:postgres@peer-db:5432/workshop \
-  <their-dockerhub-username>/workshop-app:latest
+  namo89/workshop-app:latest
 
 # 4. Wait ~10 seconds for Postgres to initialize, then verify
 curl -fsS http://localhost:3000/health   # expected: {"status":"ok"}
