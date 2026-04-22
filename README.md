@@ -78,7 +78,7 @@ docker compose ps
 docker compose config | grep -A1 depends_on
 ```
 
-Smoke test (also confirms AC-04 at runtime):
+Smoke test (also confirms AC-04 at runtime!):
 ```bash
 docker inspect --format='{{.State.Health.Status}}' \
   $(docker compose ps -q web)            # should print: healthy
